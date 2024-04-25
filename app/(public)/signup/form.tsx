@@ -9,19 +9,29 @@ const Form = () => {
   const router = useRouter();
   const [username, setUsername] = useState<undefined | string>('');
   const [password, setPassword] = useState<undefined | string>('');
+  const [confirmPassword, setConfirmPassword] = useState<undefined | string>(
+    '',
+  );
+  const [errors, setErrors] = useState<string[]>([]);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setErrors([]);
 
-    const res = await fetch('/api/login', {
+    if (password !== confirmPassword) {
+      errors.push('passwords do not match');
+      return;
+    }
+
+    const res = await fetch('/api/signup', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
     });
 
     if (res.ok) {
-      router.push('/feed');
+      router.push('/login');
     } else {
-      alert('log in failed');
+      alert('sign up failed');
     }
   }
 
@@ -48,6 +58,18 @@ const Form = () => {
           onChange={(e) => setPassword(e.target.value)}
           id="password"
           placeholder="Password"
+          required
+        />
+      </div>
+      <label>Confirm Password: </label>
+      <div className="mt-4">
+        <input
+          className="text-black border-2 border-blue-800text-white p-2 mb-4 md:w-[400px] font-bold"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          id="confirm-password"
+          placeholder="Confirm Password"
           required
         />
       </div>
