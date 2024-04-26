@@ -19,7 +19,7 @@ const Form = () => {
     setErrors([]);
 
     if (password !== confirmPassword) {
-      errors.push('passwords do not match');
+      setErrors([...errors, 'passwords do not match']);
       return;
     }
 
@@ -79,6 +79,9 @@ const Form = () => {
       >
         Submit
       </button>
+      {errors.length > 0 && (
+        <div className="mt-4 text-red-500">{errors[0]}</div>
+      )}
     </form>
   );
 };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Home = () => {
   return (
     <main className="flex min-h-screen justify-center items-center">
-      <div className="flex flex-col gap-2 bg-slate-800 p-16">
+      <div className="flex flex-col gap-2 bg-slate-800 p-12">
         <h1 className="text-3xl text-white pb-6 font-bold">Twitter Clone</h1>
         <Link
           href={'/signup'}
