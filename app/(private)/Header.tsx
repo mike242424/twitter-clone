@@ -9,7 +9,7 @@ const Header = () => {
   if (isLoading) return <div>loading...</div>;
 
   return (
-    <header className="flex flex-row w-full p-3 bg-slate-800 justify-between items-center mb-2">
+    <header className="flex flex-row w-full p-3 bg-slate-800 justify-between items-center">
       <h1 className="text-3xl font-bold ml-10">Twitter Clone</h1>
       <div className="mr-10">
         <User user={data.data} href="account" />

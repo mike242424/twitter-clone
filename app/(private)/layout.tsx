@@ -9,10 +9,12 @@ import { fetcher } from '../utils/fetcher';
 const PrivateLayout = ({ children }: { children: ReactNode }) => {
   return (
     <SWRConfig value={{ fetcher: fetcher }}>
-      <div>
+      <div className="flex flex-col min-h-screen">
         <Header />
         <Navbar />
-        <main>{children}</main>
+        <main className="flex flex-1 bg-white text-slate-900 justify-center">
+          {children}
+        </main>
         <Footer />
       </div>
     </SWRConfig>
