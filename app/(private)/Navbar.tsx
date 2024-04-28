@@ -11,10 +11,10 @@ const Navbar = () => {
           <Link href="/profile">Profile</Link>
         </li>
         <li className="hover:text-slate-900">
-          <Link href="/follwing">Following</Link>
+          <Link href="/following">Following</Link>
         </li>
         <li className="hover:text-slate-900">
-          <Link href="/follwers">Followers</Link>
+          <Link href="/followers">Followers</Link>
         </li>
       </ul>
     </nav>
