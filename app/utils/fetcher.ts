@@ -3,7 +3,7 @@ export async function fetcher(url: RequestInfo | URL) {
 
   if (!res.ok) {
     const message = 'an error occured while fetching the data';
-    const info = res.json();
+    const info = await res.json();
     const status = res.status;
     const error = new Error(message);
     console.error(info, status);

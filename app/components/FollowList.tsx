@@ -5,8 +5,6 @@ import useSWR from 'swr';
 const FollowList = ({ index, follow }: { index: number; follow: string }) => {
   const { data: userData } = useSWR(`/api/users/profile`);
 
-  console.log(userData);
-
   const { data: followerData } = useSWR(
     () => `/api/users/${userData.data.id}/${follow}?page=${index}`,
   );

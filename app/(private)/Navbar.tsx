@@ -5,7 +5,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-slate-600  p-3">
+    <nav className="bg-slate-600 p-3">
       <ul className="flex justify-around">
         <li className="hover:text-slate-900">
           <Link

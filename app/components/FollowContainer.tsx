@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import FollowList from './FollowList';
 
-const FollowContainer = ({follow}: {follow: string}) => {
+const FollowContainer = ({ follow }: { follow: string }) => {
   const [count, setCount] = useState(1);
 
   const pages = [];
   for (let i = 0; i < count; i++) {
-    pages.push(<FollowList index={i} follow={follow}/>);
+    pages.push(<FollowList index={i} follow={follow} key={i} />);
   }
   return (
     <div>

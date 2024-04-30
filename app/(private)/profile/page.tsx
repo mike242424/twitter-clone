@@ -11,7 +11,7 @@ const Profile = () => {
 
   return (
     <main className="lg:w-6/12">
-      <h1 className="text-center text-3xl text-slate-900 my-4 font-bold">
+      <h1 className="text-center text-3xl text-slate-900 my-8 font-bold">
         Profile
       </h1>
       <Form />
