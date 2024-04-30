@@ -2,13 +2,13 @@ import User from '@/app/components/User';
 import { UserInterface } from '@/app/types';
 import useSWR from 'swr';
 
-const FollowingList = ({ index }: { index: number }) => {
+const FollowList = ({ index, follow }: { index: number; follow: string }) => {
   const { data: userData } = useSWR(`/api/users/profile`);
 
   console.log(userData);
 
   const { data: followerData } = useSWR(
-    () => `/api/users/${userData.data.id}/following?page=${index}`,
+    () => `/api/users/${userData.data.id}/${follow}?page=${index}`,
   );
 
   if (!followerData) {
@@ -29,4 +29,4 @@ const FollowingList = ({ index }: { index: number }) => {
   );
 };
 
-export default FollowingList;
+export default FollowList;

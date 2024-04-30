@@ -1,4 +1,4 @@
-import FollowingContainer from './FollowingContainer';
+import FollowContainer from '../../components/FollowContainer';
 
 const Following = () => {
   return (
@@ -6,7 +6,7 @@ const Following = () => {
       <h1 className="text-center text-3xl text-slate-900 my-4 font-bold">
         Following
       </h1>
-      <FollowingContainer />
+      <FollowContainer follow="following" />
     </main>
   );
 };
