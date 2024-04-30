@@ -45,14 +45,6 @@ const Header = ({ username }: { username: string }) => {
 
   return (
     <div className="flex gap-4 items-center justify-center">
-      <Image
-        className="rounded-full"
-        src={dataUser.data[0].avatar}
-        alt={dataUser.data[0].username}
-        width={50}
-        height={50}
-      />
-
       <h1 className="text-center text-3xl text-slate-900 my-8 font-bold">
         {username}
       </h1>
