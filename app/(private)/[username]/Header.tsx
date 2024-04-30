@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import useSWR, { mutate } from 'swr';
 
 const Header = ({ username }: { username: string }) => {
@@ -7,6 +8,10 @@ const Header = ({ username }: { username: string }) => {
     error: errorUser,
     isLoading: isLoadingUser,
   } = useSWR(`/api/users?username=${username}`);
+
+  if (dataUser?.data?.length === 0) {
+    notFound();
+  }
 
   const userId = dataUser?.data[0].id;
 

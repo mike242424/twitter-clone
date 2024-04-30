@@ -1,7 +1,6 @@
 import { getJWTPayload } from '@/app/utils/auth';
 import { sql } from '@/db';
 import { NextResponse } from 'next/server';
-import { off } from 'process';
 
 export async function GET(request: Request) {
   const jwtPayload = await getJWTPayload();
