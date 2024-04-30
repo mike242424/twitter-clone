@@ -1,5 +1,6 @@
 'use client';
 
+import PostContainer from '@/app/components/PostContainer';
 import Header from './Header';
 
 const UserPage = ({
@@ -10,6 +11,7 @@ const UserPage = ({
   return (
     <main className="lg:w-6/12">
       <Header username={username} />
+      <PostContainer username={username} />
     </main>
   );
 };

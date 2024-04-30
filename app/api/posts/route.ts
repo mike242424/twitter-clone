@@ -1,6 +1,7 @@
 import { getJWTPayload } from '@/app/utils/auth';
 import { sql } from '@/db';
 import { NextResponse } from 'next/server';
+import { off } from 'process';
 
 export async function GET(request: Request) {
   const jwtPayload = await getJWTPayload();
@@ -12,7 +13,21 @@ export async function GET(request: Request) {
   const offset = page * limit;
 
   if (username) {
-    // TODO: user profile page for other users
+    const userRes = await sql('select * from users where username = $1', [
+      username,
+    ]);
+
+    if (userRes.rowCount === 0) {
+      return NextResponse.json({ error: 'not found' }, { status: 404 });
+    }
+
+    const user = userRes.rows[0];
+    const postsRes = await sql(
+      'select p.*, u.avatar, u.username from posts p inner join users u on p.user_id = u.id where user_id = $1 order by created_at desc limit $2 offset $3',
+      [user.id, limit, offset],
+    );
+
+    return NextResponse.json({ data: postsRes.rows });
   }
 
   const res = await sql(
