@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="bg-slate-600 p-3">
       <ul className="flex justify-around">
-        <li className="hover:text-slate-900">
+        <li className="hover:text-slate-900 font-bold">
           <Link
             className={pathname.startsWith('/feed') ? 'text-slate-900' : ''}
             href="/feed"
@@ -15,7 +15,7 @@ const Navbar = () => {
             Feed
           </Link>
         </li>
-        <li className="hover:text-slate-900">
+        <li className="hover:text-slate-900 font-bold">
           <Link
             className={pathname.startsWith('/profile') ? 'text-slate-900' : ''}
             href="/profile"
@@ -23,7 +23,7 @@ const Navbar = () => {
             Profile
           </Link>
         </li>
-        <li className="hover:text-slate-900">
+        <li className="hover:text-slate-900 font-bold">
           <Link
             className={
               pathname.startsWith('/following') ? 'text-slate-900' : ''
@@ -33,7 +33,7 @@ const Navbar = () => {
             Following
           </Link>
         </li>
-        <li className="hover:text-slate-900">
+        <li className="hover:text-slate-900 font-bold">
           <Link
             className={
               pathname.startsWith('/followers') ? 'text-slate-900' : ''
