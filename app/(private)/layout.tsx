@@ -13,7 +13,9 @@ const PrivateLayout = ({ children }: { children: ReactNode }) => {
         <Header />
         <Navbar />
         <main className="flex flex-1 bg-white text-slate-900 justify-center">
-          {children}
+          <div className="w-full sm:w-10/12 md:w-6/12 lg:w-6/12">
+            {children}
+          </div>
         </main>
         <Footer />
       </div>

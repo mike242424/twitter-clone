@@ -10,13 +10,13 @@ const Profile = () => {
   if (isLoading) return <div>loading...</div>;
 
   return (
-    <main className="lg:w-6/12">
+    <>
       <h1 className="text-center text-3xl text-slate-900 my-8 font-bold">
         Profile
       </h1>
       <Form />
       <PostContainer username={data.data.username} />
-    </main>
+    </>
   );
 };
 

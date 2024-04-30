@@ -17,7 +17,7 @@ const FollowList = ({ index, follow }: { index: number; follow: string }) => {
       {followerData.data.map((user: UserInterface) => {
         return (
           <li className="m-4" key={user.id}>
-            <div className="flex bg-slate-300 rounded full text-slate-800">
+            <div className="flex bg-slate-200 rounded full text-slate-800">
               <User user={user} />
             </div>
           </li>
