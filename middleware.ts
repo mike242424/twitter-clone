@@ -1,4 +1,3 @@
-import { stat } from 'fs';
 import { jwtVerify } from 'jose';
 import { NextRequest, NextResponse } from 'next/server';
 

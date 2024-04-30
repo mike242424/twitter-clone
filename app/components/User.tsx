@@ -6,7 +6,7 @@ const User = ({ user, href }: { user: UserInterface; href?: string }) => {
   return (
     <div>
       <Link href={`/${href || user.username}`} className="flex flex-col">
-        <div className="self-center">
+        <div className="flex flex-row self-center gap-4 items-center p-2 my-4 ml-4">
           {user.avatar ? (
             <Image
               src={user.avatar}
@@ -18,8 +18,8 @@ const User = ({ user, href }: { user: UserInterface; href?: string }) => {
           ) : (
             <div className="bg-slate-600 rounded-full h-[50px] w-[50px]"></div>
           )}
+          <p>{user.username}</p>
         </div>
-        <p className="mt-2">{user.username}</p>
       </Link>
     </div>
   );
