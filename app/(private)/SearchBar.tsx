@@ -1,7 +1,7 @@
 'use client';
 
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
-import { debounce, set } from 'lodash';
+import { debounce } from 'lodash';
 import { UserInterface } from '../types';
 import User from '../components/User';
 
@@ -32,6 +32,10 @@ const SearchBar = () => {
       const json = await res.json();
       setUsers(json.data);
       setVisible(true);
+    } else {
+      setUsers([]);
+      setVisible(false);
+      setSearchText('');
     }
   }, 300);
 
