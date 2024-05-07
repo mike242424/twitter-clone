@@ -21,7 +21,7 @@ const Form = () => {
   return (
     <form className="flex flex-col items-center m-4" onSubmit={handleSubmit}>
       <textarea
-        className="p-4 bg-slate-200 text-slate-900 rounded-lg w-full"
+        className="p-4 bg-slate-200 text-slate-900 rounded-lg w-full border-2 border-slate-500"
         placeholder="Add new post..."
         value={post}
         onChange={(e) => setPost(e.target.value)}
