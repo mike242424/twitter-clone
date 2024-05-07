@@ -11,6 +11,7 @@ const PostContainer = ({
   showEditButton?: boolean;
 }) => {
   const [count, setCount] = useState(1);
+  const [hasMorePosts, setHasMorePosts] = useState(true);
 
   const pages = [];
   for (let i = 0; i < count; i++) {
@@ -20,6 +21,7 @@ const PostContainer = ({
         index={i}
         username={username}
         showEditButton={showEditButton}
+        setHasMorePosts={setHasMorePosts}
       />,
     );
   }
@@ -27,15 +29,16 @@ const PostContainer = ({
   return (
     <div>
       {pages}
-
-      <div className="text-center mb-4">
-        <button
-          className="p-3 bg-slate-800 text-white rounded-lg"
-          onClick={() => setCount(count + 1)}
-        >
-          Load More
-        </button>
-      </div>
+      {hasMorePosts && (
+        <div className="text-center mb-4">
+          <button
+            className="p-3 bg-slate-800 text-white rounded-lg"
+            onClick={() => setCount(count + 1)}
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -10,6 +10,7 @@ const FollowContainer = ({ follow }: { follow: string }) => {
   for (let i = 0; i < count; i++) {
     pages.push(<FollowList index={i} follow={follow} key={i} />);
   }
+
   return (
     <div>
       {pages}
