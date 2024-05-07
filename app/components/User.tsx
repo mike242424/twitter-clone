@@ -9,7 +9,9 @@ const User = ({ user, href }: { user: UserInterface; href?: string }) => {
         href={`/${href || user.username}`}
         className="flex flex-col font-bold"
       >
-        <div className="flex flex-row self-center gap-4 items-center p-2 my-4 ml-4">
+        <div
+          className={`flex flex-row self-center gap-4 items-center p-1 my-4 ml-4`}
+        >
           {user.avatar ? (
             <Image
               src={user.avatar}
