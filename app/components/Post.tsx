@@ -2,7 +2,13 @@ import Image from 'next/image';
 import { PostInterface } from '../types';
 import Link from 'next/link';
 
-const Post = ({ post }: { post: PostInterface }) => {
+const Post = ({
+  post,
+  showEditButton,
+}: {
+  post: PostInterface;
+  showEditButton?: boolean;
+}) => {
   function formatDate(dateString: string): string {
     const date = new Date(dateString);
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -46,8 +52,16 @@ const Post = ({ post }: { post: PostInterface }) => {
           <p>{formatDate(post.created_at)}</p>
         </div>
       </div>
-      <div>
-        <p>{post.content}</p>
+      <div className="flex justify-between">
+        <p className="w-8/12 self-end">{post.content}</p>
+        {showEditButton && (
+          <Link
+            className="p-4 bg-slate-800 text-white rounded-lg self-end"
+            href={`/profile/edit-post/${post.id}`}
+          >
+            Edit Post
+          </Link>
+        )}
       </div>
     </div>
   );

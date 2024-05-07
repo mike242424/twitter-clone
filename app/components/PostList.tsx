@@ -2,7 +2,15 @@ import useSWR from 'swr';
 import { PostInterface } from '../types';
 import Post from './Post';
 
-const PostList = ({ index, username }: { index: number; username: string }) => {
+const PostList = ({
+  index,
+  username,
+  showEditButton,
+}: {
+  index: number;
+  username: string;
+  showEditButton?: boolean;
+}) => {
   const { data, error, isLoading } = useSWR(
     () => `/api/posts?page=${index}&username=${username}`,
   );
@@ -15,7 +23,7 @@ const PostList = ({ index, username }: { index: number; username: string }) => {
       {data.data.map((post: PostInterface) => {
         return (
           <li className="m-4" key={post.id}>
-            <Post post={post} />
+            <Post showEditButton={showEditButton} post={post} />
           </li>
         );
       })}

@@ -18,7 +18,7 @@ const FeedList = ({ index }: { index: number }) => {
       {data.data.map((post: PostInterface) => {
         return (
           <li className="m-4" key={post.id}>
-            <Post post={post} />
+            <Post showEditButton={false} post={post} />
           </li>
         );
       })}

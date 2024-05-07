@@ -15,7 +15,7 @@ const Profile = () => {
         Profile
       </h1>
       <Form />
-      <PostContainer username={data.data.username} />
+      <PostContainer username={data.data.username} showEditButton={true} />
     </>
   );
 };
