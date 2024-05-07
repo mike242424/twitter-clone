@@ -13,10 +13,10 @@ const FollowList = ({ index, follow }: { index: number; follow: string }) => {
     return <div>loading...</div>;
   }
   return (
-    <ul>
+    <ul className="grid sm:grid-cols-2 gap-4 m-4">
       {followerData.data.map((user: UserInterface) => {
         return (
-          <li className="m-4" key={user.id}>
+          <li className="w-full" key={user.id}>
             <div className="flex bg-slate-200 rounded-lg text-slate-800">
               <User user={user} />
             </div>

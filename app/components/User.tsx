@@ -5,7 +5,10 @@ import Image from 'next/image';
 const User = ({ user, href }: { user: UserInterface; href?: string }) => {
   return (
     <div>
-      <Link href={`/${href || user.username}`} className="flex flex-col">
+      <Link
+        href={`/${href || user.username}`}
+        className="flex flex-col font-bold"
+      >
         <div className="flex flex-row self-center gap-4 items-center p-2 my-4 ml-4">
           {user.avatar ? (
             <Image
