@@ -1,8 +1,17 @@
 import User from '@/app/components/User';
 import { UserInterface } from '@/app/types';
+import { Dispatch, SetStateAction } from 'react';
 import useSWR from 'swr';
 
-const FollowList = ({ index, follow }: { index: number; follow: string }) => {
+const FollowList = ({
+  index,
+  follow,
+  setHasMoreFollows,
+}: {
+  index: number;
+  follow: string;
+  setHasMoreFollows: Dispatch<SetStateAction<boolean>>;
+}) => {
   const { data: userData } = useSWR(`/api/users/profile`);
 
   const { data: followerData } = useSWR(
@@ -12,6 +21,11 @@ const FollowList = ({ index, follow }: { index: number; follow: string }) => {
   if (!followerData) {
     return <div>loading...</div>;
   }
+
+  if (followerData.data.length < 10) {
+    setHasMoreFollows(false);
+  }
+
   return (
     <ul className="grid sm:grid-cols-2 gap-4 m-4">
       {followerData.data.map((user: UserInterface) => {

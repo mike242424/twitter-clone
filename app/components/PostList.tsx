@@ -25,6 +25,8 @@ const PostList = ({
     setHasMorePosts(false);
   }
 
+  console.log(data.data.length);
+
   return (
     <ul>
       {data.data.map((post: PostInterface) => {

@@ -8,7 +8,7 @@ export async function GET(
   const { searchParams } = new URL(request.url);
   const page =
     (searchParams.get('page') && parseInt(searchParams.get('page')!)) || 0;
-  const limit = 5;
+  const limit = 10;
   const offset = page * limit;
   const res = await sql(
     `select u.id, u.username, u.avatar 

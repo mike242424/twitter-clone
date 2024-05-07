@@ -4,7 +4,7 @@ const Followers = () => {
   return (
     <>
       <h1 className="text-center text-3xl text-slate-900 my-8 font-bold">
-        Following
+        Followers
       </h1>
       <FollowContainer follow="followers" />
     </>

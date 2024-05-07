@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const page =
     (searchParams.get('page') && parseInt(searchParams.get('page')!)) || 0;
 
-  const limit = 10;
+  const limit = 5;
   const offset = page * limit;
   const jwtPayload = await getJWTPayload();
 

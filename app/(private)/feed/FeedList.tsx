@@ -1,8 +1,15 @@
 import Post from '@/app/components/Post';
 import { PostInterface } from '@/app/types';
+import { Dispatch, SetStateAction } from 'react';
 import useSWR from 'swr';
 
-const FeedList = ({ index }: { index: number }) => {
+const FeedList = ({
+  index,
+  setHasMorePosts,
+}: {
+  index: number;
+  setHasMorePosts: Dispatch<SetStateAction<boolean>>;
+}) => {
   const { data, error, isLoading } = useSWR(`/api/posts/feed?page=${index}`);
 
   if (error) {
@@ -11,6 +18,10 @@ const FeedList = ({ index }: { index: number }) => {
 
   if (isLoading) {
     return <div>loading..</div>;
+  }
+
+  if (data.data.length < 5) {
+    setHasMorePosts(false);
   }
 
   return (
