@@ -15,7 +15,7 @@ const FollowContainer = ({ follow }: { follow: string }) => {
       {pages}
       <div className="text-center mb-4">
         <button
-          className="p-4 bg-slate-800 text-white rounded-lg"
+          className="p-3 bg-slate-800 text-white rounded-lg"
           onClick={() => setCount(count + 1)}
         >
           Load More

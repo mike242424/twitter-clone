@@ -56,7 +56,7 @@ const Post = ({
         <p className="w-8/12 self-end">{post.content}</p>
         {showEditButton && (
           <Link
-            className="p-4 bg-slate-800 text-white rounded-lg self-end"
+            className="p-3 bg-slate-800 text-white rounded-lg self-end"
             href={`/profile/edit-post/${post.id}`}
           >
             Edit Post

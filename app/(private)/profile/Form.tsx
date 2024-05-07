@@ -28,7 +28,7 @@ const Form = () => {
       ></textarea>
       <div className="text-center mt-3">
         <button
-          className="p-4 mt-1 bg-slate-800 text-white rounded-lg"
+          className="p-3 mt-1 bg-slate-800 text-white rounded-lg"
           type="submit"
         >
           Add Post

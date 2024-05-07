@@ -51,7 +51,7 @@ const Header = ({ username }: { username: string }) => {
       {dataFollow.data.length > 0 ? (
         <div className="text-center">
           <button
-            className="p-4 bg-slate-800 text-white rounded-lg"
+            className="p-3 bg-slate-800 text-white rounded-lg"
             onClick={handleUnfollow}
           >
             Unfollow
@@ -60,7 +60,7 @@ const Header = ({ username }: { username: string }) => {
       ) : (
         <div className="text-center">
           <button
-            className="p-4 bg-slate-800 text-white rounded-lg"
+            className="p-3 bg-slate-800 text-white rounded-lg"
             onClick={handleFollow}
           >
             Follow

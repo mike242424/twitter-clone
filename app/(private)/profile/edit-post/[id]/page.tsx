@@ -1,7 +1,7 @@
 'use client';
 
 import useSWR from 'swr';
-import EditForm from '../EditForm';
+import EditForm from './EditForm';
 
 function EditPost({ params: { id } }: { params: { id: number } }) {
   const { data, error, isLoading } = useSWR(`/api/posts/${id}`);
