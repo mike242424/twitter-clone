@@ -2,12 +2,13 @@
 
 import useSWR from 'swr';
 import EditForm from './EditForm';
+import EditPostLoading from '../EditPostLoading';
 
 function EditPost({ params: { id } }: { params: { id: number } }) {
   const { data, error, isLoading } = useSWR(`/api/posts/${id}`);
 
   if (error) return <div>falied to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <EditPostLoading />;
 
   return (
     <>

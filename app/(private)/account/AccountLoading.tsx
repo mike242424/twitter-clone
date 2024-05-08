@@ -10,10 +10,11 @@ const AccountLoading = () => {
       <div className="flex flex-col gap-4 bg-slate-200 p-8 rounded-lg">
         <form className="flex flex-col items-center justify-center gap-4">
           <div className="flex items-center justify-center">
-            <input className="w-8/12" name="file" type="file" required />
+            <input className="w-8/12" name="file" type="file" disabled />
             <button
               className="p-3 bg-slate-800 text-white rounded-lg"
               type="submit"
+              disabled
             >
               Upload
             </button>
@@ -23,6 +24,7 @@ const AccountLoading = () => {
             <button
               className="p-3 bg-slate-800 text-white rounded-lg"
               type="button"
+              disabled
             >
               Log Out
             </button>
