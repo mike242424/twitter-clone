@@ -3,11 +3,12 @@ import useSWR from 'swr';
 import Form from './Form';
 import PostContainer from '@/app/components/PostContainer';
 import PostLoading from '@/app/components/PostLoading';
+import NotFound from '../../components/AccessDenied';
 
 const Profile = () => {
   const { data, error, isLoading } = useSWR('/api/users/profile');
 
-  if (error) return <div>failed to load</div>;
+  if (error) return <NotFound />;
   if (isLoading)
     return (
       <>

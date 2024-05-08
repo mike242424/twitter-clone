@@ -1,5 +1,3 @@
-import AvatarForm from './AvatarForm';
-
 const AccountLoading = () => {
   return (
     <div className="flex flex-col items-center justify-center">

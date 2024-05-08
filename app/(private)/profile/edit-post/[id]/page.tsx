@@ -3,11 +3,12 @@
 import useSWR from 'swr';
 import EditForm from './EditForm';
 import EditPostLoading from '../EditPostLoading';
+import NotFound from '@/app/components/AccessDenied';
 
 function EditPost({ params: { id } }: { params: { id: number } }) {
   const { data, error, isLoading } = useSWR(`/api/posts/${id}`);
 
-  if (error) return <div>falied to load</div>;
+  if (error) return <NotFound />;
   if (isLoading) return <EditPostLoading />;
 
   return (

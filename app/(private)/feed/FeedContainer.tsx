@@ -3,26 +3,35 @@
 import { useState } from 'react';
 import FeedList from './FeedList';
 
-const FeedContainer = () => {
+const FeedContainer = ({ onError }: { onError: () => void }) => {
   const [count, setCount] = useState(1);
   const [hasMorePosts, setHasMorePosts] = useState(true);
 
-  const pages = [];
-  for (let i = 0; i < count; i++) {
-    pages.push(<FeedList index={i} key={i} setHasMorePosts={setHasMorePosts}/>);
-  }
+  const handleLoadMore = () => {
+    setCount(count + 1);
+  };
+
+  const handleFeedError = () => {
+    onError();
+  };
 
   return (
     <div>
-      {pages}
-      {hasMorePosts && <div className="text-center mb-4">
-        <button
-          className="p-3 bg-slate-800 text-white rounded-lg"
-          onClick={() => setCount(count + 1)}
-        >
-          Load More
-        </button>
-      </div>}
+      <FeedList
+        index={count}
+        setHasMorePosts={setHasMorePosts}
+        onError={handleFeedError}
+      />
+      {hasMorePosts && (
+        <div className="text-center mb-4">
+          <button
+            className="p-3 bg-slate-800 text-white rounded-lg"
+            onClick={handleLoadMore}
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </div>
   );
 };

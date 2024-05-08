@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { UserInterface } from '../types';
+import { UserInterface } from '../types/types';
 import Image from 'next/image';
 
 const User = ({ user, href }: { user: UserInterface; href?: string }) => {

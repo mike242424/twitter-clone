@@ -1,6 +1,6 @@
 'use client';
 
-import { PostInterface } from '@/app/types';
+import { PostInterface } from '@/app/types/types';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useState } from 'react';
 

@@ -4,18 +4,23 @@ import Image from 'next/image';
 import useSWR from 'swr';
 import type { PutBlobResult } from '@vercel/blob';
 import { useRouter } from 'next/navigation';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import LogoutButton from './LogoutButton';
 import AccountLoading from './AccountLoading';
 
-const AvatarForm = () => {
+const AvatarForm = ({ onError }: { onError: () => void }) => {
   const { data, error, isLoading } = useSWR('/api/users/profile');
   const user = data?.data;
   const inputFileRef = useRef<HTMLInputElement>(null);
   const [blob, setBlob] = useState<PutBlobResult | null>(null);
   const router = useRouter();
 
-  if (error) return <div>failed to load</div>;
+  useEffect(() => {
+    if (error) {
+      onError();
+    }
+  }, [data, error, onError]);
+
   if (isLoading) return <AccountLoading />;
 
   return (
@@ -44,8 +49,10 @@ const AvatarForm = () => {
         }}
       >
         <div className="flex flex-col items-center justify-center">
-          <h3 className="mb-8 font-bold text-xl">{data.data.username}</h3>
-          {user.avatar ? (
+          <h3 className="mb-8 font-bold text-xl">
+            {data && data.data.username}
+          </h3>
+          {user && user.avatar ? (
             <Image
               className="justify-center items-center rounded-full"
               src={user.avatar}

@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { debounce } from 'lodash';
-import { UserInterface } from '../types';
+import { UserInterface } from '../types/types';
 import User from '../components/User';
 
 const SearchBar = () => {

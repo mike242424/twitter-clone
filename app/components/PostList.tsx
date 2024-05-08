@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { PostInterface } from '../types';
+import { PostInterface } from '../types/types';
 import Post from './Post';
 import { Dispatch, SetStateAction } from 'react';
 import PostLoading from './PostLoading';
