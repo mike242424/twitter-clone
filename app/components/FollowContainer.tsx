@@ -20,7 +20,7 @@ const FollowContainer = ({ follow }: { follow: string }) => {
   }
 
   return (
-    <div>
+    <>
       {pages}
       {hasMoreFollows && (
         <div className="text-center mb-4">
@@ -32,7 +32,7 @@ const FollowContainer = ({ follow }: { follow: string }) => {
           </button>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
