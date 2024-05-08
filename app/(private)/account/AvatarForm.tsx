@@ -6,6 +6,7 @@ import type { PutBlobResult } from '@vercel/blob';
 import { useRouter } from 'next/navigation';
 import { useState, useRef } from 'react';
 import LogoutButton from './LogoutButton';
+import AccountLoading from './AccountLoading';
 
 const AvatarForm = () => {
   const { data, error, isLoading } = useSWR('/api/users/profile');
@@ -15,7 +16,7 @@ const AvatarForm = () => {
   const router = useRouter();
 
   if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <AccountLoading />;
 
   return (
     <>
@@ -43,7 +44,7 @@ const AvatarForm = () => {
         }}
       >
         <div className="flex flex-col items-center justify-center">
-          <h3 className="mb-4 font-bold text-xl">{data.data.username}</h3>
+          <h3 className="mb-8 font-bold text-xl">{data.data.username}</h3>
           {user.avatar ? (
             <Image
               className="justify-center items-center rounded-full"
