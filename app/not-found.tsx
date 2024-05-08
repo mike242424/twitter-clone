@@ -1,11 +1,11 @@
 'use client';
 
-import Navbar from './(private)/Navbar';
 import Footer from './(private)/Footer';
+import Navbar from './(private)/Navbar';
 
 const NotFound = () => {
   return (
-    <div>
+    <main className="bg-white min-h-screen flex flex-col">
       <header className="flex flex-row w-full p-3 py-8 bg-slate-800 justify-between items-center">
         <h1 className="text-3xl font-bold ml-10">Twitter Clone</h1>
         <div className="mr-10">
@@ -15,16 +15,16 @@ const NotFound = () => {
         </div>
       </header>
       <Navbar />
-      <div className="bg-white h-screen">
+      <div className="flex-grow bg-white">
         <h1 className="text-center text-3xl text-slate-900 font-bold pt-8">
           404 Not Found
         </h1>
-        <p className="text-center text-xl text-slate-900 my-8 font-bold">
-          This page doesnt not exist
+        <p className="text-center text-xl text-slate-900 mt-8 font-bold">
+          This page doesn't exist
         </p>
       </div>
       <Footer />
-    </div>
+    </main>
   );
 };
 

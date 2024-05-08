@@ -5,7 +5,6 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { fetcher } from '../utils/fetcher';
-import SearchBar from './SearchBar';
 
 const PrivateLayout = ({ children }: { children: ReactNode }) => {
   return (
