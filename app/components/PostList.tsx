@@ -2,6 +2,7 @@ import useSWR from 'swr';
 import { PostInterface } from '../types';
 import Post from './Post';
 import { Dispatch, SetStateAction } from 'react';
+import PostLoading from './PostLoading';
 
 const PostList = ({
   index,
@@ -19,13 +20,11 @@ const PostList = ({
   );
 
   if (error) return <div>failed to load</div>;
-  if (isLoading || !data) return <div>loading...</div>;
+  if (isLoading || !data) return <PostLoading />;
 
   if (data.data.length < 5) {
     setHasMorePosts(false);
   }
-
-  console.log(data.data.length);
 
   return (
     <ul>

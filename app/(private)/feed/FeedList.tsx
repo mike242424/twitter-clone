@@ -1,4 +1,5 @@
 import Post from '@/app/components/Post';
+import PostLoading from '@/app/components/PostLoading';
 import { PostInterface } from '@/app/types';
 import { Dispatch, SetStateAction } from 'react';
 import useSWR from 'swr';
@@ -17,7 +18,7 @@ const FeedList = ({
   }
 
   if (isLoading) {
-    return <div>loading..</div>;
+    return <PostLoading />;
   }
 
   if (data.data.length < 5) {

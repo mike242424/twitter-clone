@@ -2,12 +2,22 @@
 import useSWR from 'swr';
 import Form from './Form';
 import PostContainer from '@/app/components/PostContainer';
+import PostLoading from '@/app/components/PostLoading';
 
 const Profile = () => {
   const { data, error, isLoading } = useSWR('/api/users/profile');
 
   if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading)
+    return (
+      <>
+        <h1 className="text-center text-3xl text-slate-900 my-8 font-bold">
+          Profile
+        </h1>
+        <Form />
+        <PostLoading />
+      </>
+    );
 
   return (
     <>
