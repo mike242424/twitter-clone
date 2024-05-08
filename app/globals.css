@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-file-input::-webkit-file-upload-button {
+  @apply p-2.5 bg-slate-800 text-white rounded-lg cursor-pointer;
+}
+
+input[type='file']::file-selector-button {
+  @apply p-3 mr-2 bg-slate-800 text-white rounded-lg cursor-pointer border-0;
+}
