@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const User = ({ user, href }: { user: UserInterface; href?: string }) => {
   return (
-    <div>
+    <>
       <Link
         href={`/${href || user.username}`}
         className="flex flex-col font-bold"
@@ -26,7 +26,7 @@ const User = ({ user, href }: { user: UserInterface; href?: string }) => {
           <p>{user.username}</p>
         </div>
       </Link>
-    </div>
+    </>
   );
 };
 

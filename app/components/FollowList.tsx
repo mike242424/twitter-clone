@@ -2,6 +2,7 @@ import User from '@/app/components/User';
 import { UserInterface } from '@/app/types';
 import { Dispatch, SetStateAction } from 'react';
 import useSWR from 'swr';
+import Loading from './FollowLoading';
 
 const FollowList = ({
   index,
@@ -19,7 +20,7 @@ const FollowList = ({
   );
 
   if (!followerData) {
-    return <div>loading...</div>;
+    return <Loading />;
   }
 
   if (followerData.data.length < 10) {
