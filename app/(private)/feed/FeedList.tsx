@@ -1,9 +1,9 @@
 'use client';
 
-import Post from '@/app/components/Post';
-import PostLoading from '@/app/components/PostLoading';
+import Post from '@/app/components/Post/Post';
+import PostLoading from '@/app/components/Post/PostLoading';
 import { PostInterface } from '@/app/types/types';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import useSWR from 'swr';
 
 const FeedList = ({

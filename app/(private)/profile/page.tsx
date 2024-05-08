@@ -1,8 +1,8 @@
 'use client';
 import useSWR from 'swr';
 import Form from './Form';
-import PostContainer from '@/app/components/PostContainer';
-import PostLoading from '@/app/components/PostLoading';
+import PostContainer from '@/app/components/Post/PostContainer';
+import PostLoading from '@/app/components/Post/PostLoading';
 import NotFound from '../../components/AccessDenied';
 
 const Profile = () => {

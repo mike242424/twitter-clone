@@ -1,6 +1,6 @@
 'use client';
 
-import PostContainer from '@/app/components/PostContainer';
+import PostContainer from '@/app/components/Post/PostContainer';
 import Header from './Header';
 
 const UserPage = ({

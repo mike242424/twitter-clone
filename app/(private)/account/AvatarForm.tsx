@@ -3,17 +3,15 @@
 import Image from 'next/image';
 import useSWR from 'swr';
 import type { PutBlobResult } from '@vercel/blob';
-import { useRouter } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import LogoutButton from './LogoutButton';
 import AccountLoading from './AccountLoading';
 
 const AvatarForm = ({ onError }: { onError: () => void }) => {
+  const [blob, setBlob] = useState<PutBlobResult | null>(null);
   const { data, error, isLoading } = useSWR('/api/users/profile');
   const user = data?.data;
   const inputFileRef = useRef<HTMLInputElement>(null);
-  const [blob, setBlob] = useState<PutBlobResult | null>(null);
-  const router = useRouter();
 
   useEffect(() => {
     if (error) {
@@ -45,7 +43,7 @@ const AvatarForm = ({ onError }: { onError: () => void }) => {
           );
 
           const newBlob = (await response.json()) as PutBlobResult;
-          router.refresh();
+          window.location.reload();
         }}
       >
         <div className="flex flex-col items-center justify-center">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import FollowContainer from '../../components/FollowContainer';
+import FollowContainer from '../../components/Follow/FollowContainer';
 import NotFound from '../../components/AccessDenied';
 
 const Following = () => {

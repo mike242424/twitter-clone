@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { PostInterface } from '../types/types';
+import { PostInterface } from '../../types/types';
 import Link from 'next/link';
 
 const Post = ({
