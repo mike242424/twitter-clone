@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import FollowContainer from '../../components/Follow/FollowContainer';
-import NotFound from '../../components/AccessDenied';
+import NotFound from '../../components/UnauthorizedPage';
 
 const Following = () => {
   const [error, setError] = useState(false);

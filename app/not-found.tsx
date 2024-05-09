@@ -8,10 +8,11 @@ const NotFound = () => {
     <main className="bg-white min-h-screen flex flex-col">
       <header className="flex flex-row w-full p-3 py-8 bg-slate-800 justify-between items-center">
         <h1 className="text-3xl font-bold ml-10">Twitter Clone</h1>
-        <div className="mr-10">
+        <div className="mr-10 flex items-center gap-4">
           <div className="flex bg-slate-600 rounded-full h-[50px] w-[50px] items-center justify-center">
             <p>404</p>
           </div>
+          <p>Not Found</p>
         </div>
       </header>
       <Navbar />
@@ -20,7 +21,7 @@ const NotFound = () => {
           404 Not Found
         </h1>
         <p className="text-center text-xl text-slate-900 mt-8 font-bold">
-          This page doesn't exist
+          This page does not exist
         </p>
       </div>
       <Footer />

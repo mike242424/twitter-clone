@@ -16,7 +16,7 @@ const Header = () => {
                 className={`flex flex-row self-center gap-4 items-center my-4 ml-4`}
               >
                 <div className="bg-slate-600 rounded-full h-[50px] w-[50px]"></div>
-                <p>{isLoading ? 'Loading...' : 'Page Not Found'}</p>
+                <p>{isLoading ? 'Loading...' : 'Unauthorized'}</p>
               </div>
             </div>
           </>

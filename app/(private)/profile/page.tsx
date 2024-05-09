@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import Form from './Form';
 import PostContainer from '@/app/components/Post/PostContainer';
 import PostLoading from '@/app/components/Post/PostLoading';
-import NotFound from '../../components/AccessDenied';
+import NotFound from '../../components/UnauthorizedPage';
 
 const Profile = () => {
   const { data, error, isLoading } = useSWR('/api/users/profile');

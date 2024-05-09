@@ -3,7 +3,7 @@
 import useSWR from 'swr';
 import EditForm from './EditForm';
 import EditPostLoading from '../EditPostLoading';
-import NotFound from '@/app/components/AccessDenied';
+import NotFound from '@/app/components/UnauthorizedPage';
 
 function EditPost({ params: { id } }: { params: { id: number } }) {
   const { data, error, isLoading } = useSWR(`/api/posts/${id}`);

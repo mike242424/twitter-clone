@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import SearchBar from '../SearchBar';
 import FeedContainer from './FeedContainer';
-import NotFound from '../../components/AccessDenied';
+import NotFound from '../../components/UnauthorizedPage';
 
 const Feed = () => {
   const [error, setError] = useState(false);

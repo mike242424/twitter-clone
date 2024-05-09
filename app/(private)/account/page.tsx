@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import AvatarForm from './AvatarForm';
-import NotFound from '../../components/AccessDenied';
+import NotFound from '../../components/UnauthorizedPage';
 
 const Account = () => {
   const [error, setError] = useState(false);
