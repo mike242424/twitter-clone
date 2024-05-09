@@ -11,7 +11,7 @@ const Account = () => {
     setError(true);
   };
 
-  if (error) <NotFound />;
+  if (error) return <NotFound />;
 
   return (
     <>
